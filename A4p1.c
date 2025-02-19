@@ -9,15 +9,13 @@ struct Room
 
 int main()
 {
-    const int numOfRooms;
-    int roomNumber, theNum, choosen;
+    int roomNumber, theNum, choosen, numOfRooms;
     char wOrL;
+    struct Room arr[100];
     
 
     printf("How many rooms do you want to input? ");
     scanf("%d", &numOfRooms);
-
-    struct Room arr[numOfRooms];
     
 
     for (int i = 1; i <= numOfRooms; i++)
