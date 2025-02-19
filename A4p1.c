@@ -10,8 +10,6 @@ void mostL(struct Room arr[], int size);
 void mostComputers(struct Room arr[], int size);
 void leastComputers(struct Room arr[], int size);
 
-
-
 int main()
 {
     int roomNumber, theNum, choosen, numOfRooms;
@@ -45,42 +43,43 @@ int main()
         mostW(arr, numOfRooms);
     if (choosen == 2)
         mostL(arr, numOfRooms);
-        if (choosen == 3)
+    if (choosen == 3)
         mostComputers(arr, numOfRooms);
-        if (choosen == 4);
-        leastComputers(arr, numOfRooms);
+    if (choosen == 4)
+        ;
+    leastComputers(arr, numOfRooms);
 
     return 0;
 }
 
 void mostW(struct Room arr[], int size)
 {
-    struct Room greatest = arr[0];
+    struct Room mostW = arr[0];
 
     for (int i = 0; i < size; i++)
     {
-        if (arr[i].computerType == 'l' || 'L')
+        if (arr[i].computerType == 'L')
             continue;
 
-        if (greatest.numOfComputers < arr[i].numOfComputers)
-            greatest = arr[i];
+        if (mostW.numOfComputers < arr[i].numOfComputers)
+            mostW = arr[i];
     }
-    printf("Room %s has %d Windows computers.", arr[0].name, arr[0].numOfComputers);
+    printf("Room %s has %d Windows computers.", mostW.name, mostW.numOfComputers);
 }
 
 void mostL(struct Room arr[], int size)
 {
-    struct Room greatest = arr[0];
+    struct Room mostL = arr[0];
 
     for (int i = 0; i < size; i++)
     {
-        if (arr[i].computerType == 'l' || 'L')
+        if (arr[i].computerType == 'L')
             continue;
 
-        if (greatest.numOfComputers < arr[i].numOfComputers)
-            greatest = arr[i];
+        if (mostL.numOfComputers < arr[i].numOfComputers)
+            mostL = arr[i];
     }
-    printf("Room %s has %d Windows computers.", greatest.name, greatest.numOfComputers);
+    printf("Room %s has %d Windows computers.", mostL.name, mostL.numOfComputers);
 }
 
 void mostComputers(struct Room arr[], int size)
@@ -93,24 +92,24 @@ void mostComputers(struct Room arr[], int size)
             greatest = arr[i];
     }
 
-    if (greatest.computerType == 'l' || 'L')
+    if (greatest.computerType == 'L')
         printf("Room %s has %d Linux computers.", greatest.name, greatest.numOfComputers);
-    else if (greatest.computerType == 'w' || 'W')
+    else if (greatest.computerType == 'W')
         printf("Room %s has %d Windows computers.", greatest.name, greatest.numOfComputers);
 }
 
 void leastComputers(struct Room arr[], int size)
 {
-    struct Room greatest = arr[0];
+    struct Room least = arr[0];
 
     for (int i = 0; i < size; i++)
     {
-        if (greatest.numOfComputers > arr[i].numOfComputers)
-            greatest = arr[i];
+        if (least.numOfComputers > arr[i].numOfComputers)
+            least = arr[i];
     }
 
-    if (greatest.computerType == 'l' || 'L')
-        printf("Room %s has %d Linux computers.", greatest.name, greatest.numOfComputers);
-    else if (greatest.computerType == 'w' || 'W')
-        printf("Room %s has %d Windows computers.", greatest.name, greatest.numOfComputers);
+    if (least.computerType == 'L')
+        printf("Room %s has %d Linux computers.", least.name, least.numOfComputers);
+    else if (least.computerType == 'W')
+        printf("Room %s has %d Windows computers.", least.name, least.numOfComputers);
 }
