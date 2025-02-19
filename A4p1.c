@@ -38,8 +38,8 @@ int main()
         arr[i - 1] = *ps;
     }
 
-    printf("\nWhich of the following four groups do you want to print? (1) rooms with Windows computers (2) rooms with Linux computers (3) rooms with the largest number of computers (4) rooms with the least number of computers.");
-    scanf("%d", &choosen);
+    printf("\nWhich of the following four groups do you want to print? (1) rooms with Windows computers (2) rooms with Linux computers (3) rooms with the largest number of computers (4) rooms with the least number of computers.\n");
+    scanf(" %d", &choosen);
 
     if (choosen == 1)
         mostW(arr, numOfRooms);
